@@ -1,0 +1,23 @@
+<div {{ attributes }}>
+	{{ form_start(form, {attr: {
+		"novalidate": true,
+		"data-action": "live#action",
+		"data-action-name": "prevent|save",
+		"data-controller": "form"
+	}}) }}
+	
+	<div class="card">
+		<div class="card-body">
+			<div class="row">
+				{{ form_row(form.name, {"attr": {"class": "form-control"}}) }}
+				
+				{{ form_row(form.choices, {"attr": {"class": "form-control"}}) }}
+			</div>
+		</div>
+	</div>
+	
+	<button type="submit" class="btn btn-success w-100">Test</button>
+	
+	{{ form_widget(form, {"attr": {"class": "d-none"}}) }}
+	{{ form_end(form) }}
+</div>
