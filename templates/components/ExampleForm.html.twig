@@ -1,9 +1,8 @@
-<div {{ attributes }}>
+<div {{ attributes.defaults(stimulus_controller("form")) }}>
 	{{ form_start(form, {attr: {
 		"novalidate": true,
 		"data-action": "live#action",
-		"data-action-name": "prevent|save",
-		"data-controller": "form"
+		"data-action-name": "prevent|save"
 	}}) }}
 	
 	<div class="card">
@@ -11,7 +10,11 @@
 			<div class="row">
 				{{ form_row(form.name, {"attr": {"class": "form-control"}}) }}
 				
-				{{ form_row(form.choices, {"attr": {"class": "form-control"}}) }}
+				{{ form_row(form.choices_1, {"attr": {"class": "form-control"}}) }}
+				
+				{{ form_row(form.choices_2, {"attr": {"class": "form-control"}}) }}
+				
+				{{ form_row(form.date, {"attr": {"class": "form-control"}}) }}
 			</div>
 		</div>
 	</div>
